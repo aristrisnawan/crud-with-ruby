@@ -1,0 +1,10 @@
+<%= form_for @food , html: {class: 'form-horizontal'} do |f|%>
+
+<%= f.label :nama, 'Nama Makanan :', class: 'control-label'%>
+<%= f.text_field :nama, class: 'form-control'%>
+
+<%= f.label :harga, 'Harga Makanan :', class: 'control-label'%>
+<%= f.text_field :harga, class: 'form-control'%>
+<br>
+<%= f.submit 'Simpan', class: 'btn btn-primary'%>
+<% end %>

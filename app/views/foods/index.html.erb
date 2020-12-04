@@ -1,0 +1,30 @@
+<h1>Daftar Makanan</h1>
+<hr>
+<div class="nav justify-content-end">
+<%= link_to "Tambah Makanan", new_food_path, class:'btn btn-primary'%>
+</div>
+
+<% nomor=1 %>
+<table class='table'>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nama Makanan</td>
+            <td>Harga Makanan</td>
+            <td>Aksi</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @food.each do |f| %>
+        <tr>
+            <td><%= nomor %></td>
+            <td><%= f.nama %></td>
+            <td><%= f.harga %></td>
+            <td><%= link_to 'Lihat', f,class: 'btn btn-primary' %> 
+            &nbsp <%= link_to 'Edit', edit_food_path(f) ,class: 'btn btn-success' %>
+            &nbsp <%= link_to 'Delete',f, method: :delete ,class: 'btn btn-danger' %></td>
+        </tr>
+        <% nomor+=1 %>
+    <% end %>
+    </tbody>
+</table>
